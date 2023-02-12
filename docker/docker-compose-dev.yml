@@ -1,0 +1,55 @@
+version: "3.8"
+services:
+  api:
+    build:
+      context: ../
+      dockerfile: ./docker/containers/api/Dockerfile.dev
+    container_name: api
+    working_dir: /var/www/app
+    networks:
+      - app-network
+    depends_on:
+      - postgresql
+    links:
+      - 'postgresql:postgresql'
+    volumes:
+      - ./../:/var/www/app
+  postgresql:
+    image: postgres:13.5-alpine
+    container_name: postgresql
+    restart: always
+    volumes:
+      - ./volumes/pgsql:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      - "5452:5432"
+    networks:
+      - app-network
+  nginx:
+    container_name: nginx
+    build:
+      context: containers/nginx
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ../:/var/www/app:ro
+    ports:
+      - "8000:80"
+    networks:
+      - app-network
+  clickhouse:
+    image: clickhouse/clickhouse-server
+    container_name: clickhouse
+    volumes:
+      - ./volumes/clickhouse:/var/lib/clickhouse
+      - ./containers/clickhouse/docker-entrypoint-initdb.d/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "8123:8123"
+      - "9001:9000"
+
+
+networks:
+  app-network:
+    driver: bridge
