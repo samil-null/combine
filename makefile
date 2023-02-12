@@ -1,2 +1,3 @@
 start-dev-app:
-	docker-compose -f ./docker/docker-compose-dev.yml --env-file=./docker/envs/.env.dev up -d --remove-orphans
+	cp ./docker/envs/.env.dev .env
+	docker-compose -f ./docker/docker-compose-dev.yml --env-file=.env up -d --build --remove-orphans

@@ -20,8 +20,7 @@ COPY --chown=www:www-data . /var/www/app
 WORKDIR /var/www/app
 USER www
 
-RUN cp docker/envs/.env.dev .env && \
-    composer install --no-interaction --prefer-dist --optimize-autoloader
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 EXPOSE 9000
 
