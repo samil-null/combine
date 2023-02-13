@@ -34,7 +34,7 @@ services:
       context: containers/nginx
       dockerfile: Dockerfile.dev
     volumes:
-      - ../:/var/www/app:ro
+      - ../:/var/www/app
     ports:
       - "8000:80"
     networks:
