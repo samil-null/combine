@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Event;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class EventSeeder extends Seeder
 {
@@ -33,8 +33,10 @@ class EventSeeder extends Seeder
      */
     public function run()
     {
-        foreach ($this->events as $event) {
-            Event::create($event);
-        }
+        DB::transaction(function () {
+            foreach ($this->events as $event) {
+                Event::create($event);
+            }
+        });
     }
 }

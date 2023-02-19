@@ -125,6 +125,10 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'pagination' => [
+        'per_page' => env('{PAGINATION_PER_PAGE', 10),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
