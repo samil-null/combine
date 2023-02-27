@@ -189,6 +189,7 @@ return [
         /*
          * Package Service Providers...
          */
+        \App\Providers\ClickHouseClientProvider::class,
 
         /*
          * Application Service Providers...
