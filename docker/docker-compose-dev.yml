@@ -48,7 +48,8 @@ services:
     ports:
       - "8123:8123"
       - "9001:9000"
-
+    networks:
+      - app-network
 
 networks:
   app-network:
