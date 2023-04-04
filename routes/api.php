@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->as('api.')->group(static function () {
     Route::apiResource('events', \App\Http\Controllers\Api\Events\EventController::class)->names('events');
+    Route::apiResource('events.properties', \App\Http\Controllers\Api\Events\Properties\PropertyController::class)->names('events.properties');
 });

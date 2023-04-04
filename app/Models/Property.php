@@ -23,6 +23,15 @@ class Property extends Model
     /**
      * @var string[]
      */
+    protected $fillable = [
+        'name',
+        'code',
+        'type'
+    ];
+
+    /**
+     * @var string[]
+     */
     protected $casts = [
         'type' => DataType::class
     ];
