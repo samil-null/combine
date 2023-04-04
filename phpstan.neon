@@ -1,0 +1,14 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+parameters:
+    level: 8
+    paths:
+        - app/
+        - tests/
+    ignoreErrors:
+        -
+            message: "#Method [a-zA-Z0-9\\\\:\\(\\)_]+ has no return type specified.#"
+            path: tests/
+
+
+

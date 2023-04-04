@@ -30,14 +30,14 @@ class Property extends Model
     ];
 
     /**
-     * @var string[]
+     * @var array<string, string>
      */
     protected $casts = [
         'type' => DataType::class
     ];
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<Event, Property>
      */
     public function event(): BelongsTo
     {

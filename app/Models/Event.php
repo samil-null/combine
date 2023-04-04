@@ -30,7 +30,7 @@ class Event extends Model
     ];
 
     /**
-     * @return HasMany
+     * @return HasMany<Property>
      */
     public function properties(): HasMany
     {
