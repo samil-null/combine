@@ -46,10 +46,13 @@ class EventController extends Controller
     /**
      * @param UpdateRequest $request
      * @param Event $event
+     * @return JsonResponse
      */
-    public function update(UpdateRequest $request, Event $event)
+    public function update(UpdateRequest $request, Event $event): JsonResponse
     {
         $event->update($request->validated());
+
+        return responder()->success()->respond();
     }
 
     /**
