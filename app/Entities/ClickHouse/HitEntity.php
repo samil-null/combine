@@ -10,7 +10,7 @@ final class HitEntity extends BaseEntity
     private int $eventId;
 
     /**
-     * @param int $eventId
+     * @param  int  $eventId
      */
     public function setEventId(int $eventId): void
     {
@@ -18,7 +18,7 @@ final class HitEntity extends BaseEntity
     }
 
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function toRecord(): array
     {

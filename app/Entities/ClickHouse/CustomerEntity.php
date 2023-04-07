@@ -10,7 +10,7 @@ final class CustomerEntity extends BaseEntity
     private int $version;
 
     /**
-     * @param int $version
+     * @param  int  $version
      * @return void
      */
     public function setVersion(int $version): void
@@ -19,12 +19,12 @@ final class CustomerEntity extends BaseEntity
     }
 
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function toRecord(): array
     {
         return array_merge(parent::toRecord(), [
-            'version' => $this->version
+            'version' => $this->version,
         ]);
     }
 }
