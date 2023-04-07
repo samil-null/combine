@@ -35,9 +35,9 @@ class PropertyController extends Controller
     }
 
     /**
-     * @param UpdateRequest $request
-     * @param Event $event
-     * @param Property $property
+     * @param  UpdateRequest  $request
+     * @param  Event  $event
+     * @param  Property  $property
      * @return JsonResponse
      */
     public function update(UpdateRequest $request, Event $event, Property $property): JsonResponse

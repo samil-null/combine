@@ -10,27 +10,27 @@ abstract class BaseEntity
     private string $customerId;
 
     /**
-     * @var array
+     * @var array<string, int>
      */
     private array $int = [];
 
     /**
-     * @var array
+     * @var array<string, string>
      */
     private array $str = [];
 
     /**
-     * @var array
+     * @var array<string, string[]>
      */
     private array $arrStr = [];
 
     /**
-     * @var array
+     * @var array<string, int[]>
      */
     private array $arrInt = [];
 
     /**
-     * @param string $customerId
+     * @param  string  $customerId
      */
     public function setCustomerId(string $customerId): void
     {
@@ -38,8 +38,8 @@ abstract class BaseEntity
     }
 
     /**
-     * @param string $key
-     * @param int $value
+     * @param  string  $key
+     * @param  int  $value
      * @return void
      */
     public function addInt(string $key, int $value): void
@@ -48,8 +48,8 @@ abstract class BaseEntity
     }
 
     /**
-     * @param string $key
-     * @param string $value
+     * @param  string  $key
+     * @param  string  $value
      * @return void
      */
     public function addStr(string $key, string $value): void
@@ -58,8 +58,8 @@ abstract class BaseEntity
     }
 
     /**
-     * @param string $key
-     * @param array $value
+     * @param  string  $key
+     * @param  string[]  $value
      * @return void
      */
     public function addArrStr(string $key, array $value): void
@@ -68,8 +68,8 @@ abstract class BaseEntity
     }
 
     /**
-     * @param string $key
-     * @param array $value
+     * @param  string  $key
+     * @param  int[]  $value
      * @return void
      */
     public function addArrInt(string $key, array $value): void
@@ -78,7 +78,7 @@ abstract class BaseEntity
     }
 
     /**
-     * @return array
+     * @return array<string, mixed>
      */
     public function toRecord(): array
     {
