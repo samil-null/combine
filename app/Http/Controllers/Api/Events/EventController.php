@@ -7,7 +7,6 @@ use App\Http\Requests\Api\Events\StoreRequest;
 use App\Http\Requests\Api\Events\UpdateRequest;
 use App\Models\Event;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Throwable;
 
@@ -24,7 +23,7 @@ class EventController extends Controller
     }
 
     /**
-     * @param StoreRequest $request
+     * @param  StoreRequest  $request
      * @return JsonResponse
      */
     public function store(StoreRequest $request): JsonResponse
@@ -35,7 +34,7 @@ class EventController extends Controller
     }
 
     /**
-     * @param Event $event
+     * @param  Event  $event
      * @return JsonResponse
      */
     public function show(Event $event): JsonResponse
@@ -44,8 +43,8 @@ class EventController extends Controller
     }
 
     /**
-     * @param UpdateRequest $request
-     * @param Event $event
+     * @param  UpdateRequest  $request
+     * @param  Event  $event
      * @return JsonResponse
      */
     public function update(UpdateRequest $request, Event $event): JsonResponse
@@ -56,8 +55,9 @@ class EventController extends Controller
     }
 
     /**
-     * @param Event $event
+     * @param  Event  $event
      * @return JsonResponse
+     *
      * @throws Throwable
      */
     public function destroy(Event $event): JsonResponse

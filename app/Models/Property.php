@@ -26,14 +26,14 @@ class Property extends Model
     protected $fillable = [
         'name',
         'code',
-        'type'
+        'type',
     ];
 
     /**
      * @var array<string, string>
      */
     protected $casts = [
-        'type' => DataType::class
+        'type' => DataType::class,
     ];
 
     /**

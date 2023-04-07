@@ -21,7 +21,7 @@ class EventFactory extends Factory
 
         return [
             'name' => $name,
-            'code' => Str::slug($name, '_')
+            'code' => Str::slug($name, '_'),
         ];
     }
 }

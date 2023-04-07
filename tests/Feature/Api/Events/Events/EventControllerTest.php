@@ -17,7 +17,7 @@ class EventControllerTest extends TestCase
 
         $response = $this->postJson(route('api.events.store'), [
             'name' => 'test event',
-            'code' => 'test_event'
+            'code' => 'test_event',
         ]);
 
         $response->assertCreated();
@@ -32,7 +32,7 @@ class EventControllerTest extends TestCase
 
         $response = $this->putJson(route('api.events.update', $event->id), [
             'name' => 'update event',
-            'code' => 'update_event'
+            'code' => 'update_event',
         ]);
 
         $response->assertOk();
@@ -72,8 +72,8 @@ class EventControllerTest extends TestCase
             'data' => [
                 'id' => $event->id,
                 'name' => $event->name,
-                'code' => $event->code
-            ]
+                'code' => $event->code,
+            ],
         ]);
     }
 
@@ -90,9 +90,9 @@ class EventControllerTest extends TestCase
                     [
                         'id',
                         'name',
-                        'code'
-                    ]
-                ]
+                        'code',
+                    ],
+                ],
             ]);
     }
 }

@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Enums\Common\DataType;
 use App\Models\Event;
-use App\Models\Property;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -23,7 +22,7 @@ class PropertySeeder extends Seeder
             'name' => 'Price',
             'code' => 'price',
             'type' => DataType::Float,
-        ]
+        ],
     ];
 
     /**
