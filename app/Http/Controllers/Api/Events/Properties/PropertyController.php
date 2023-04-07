@@ -14,7 +14,7 @@ use Throwable;
 class PropertyController extends Controller
 {
     /**
-     * @param Event $event
+     * @param  Event  $event
      * @return JsonResponse
      */
     public function index(Event $event): JsonResponse
@@ -23,8 +23,8 @@ class PropertyController extends Controller
     }
 
     /**
-     * @param Event $event
-     * @param StoreRequest $request
+     * @param  Event  $event
+     * @param  StoreRequest  $request
      * @return JsonResponse
      */
     public function store(Event $event, StoreRequest $request): JsonResponse
@@ -36,6 +36,7 @@ class PropertyController extends Controller
 
     /**
      * @param UpdateRequest $request
+     * @param Event $event
      * @param Property $property
      * @return JsonResponse
      */
@@ -47,9 +48,10 @@ class PropertyController extends Controller
     }
 
     /**
-     * @param Event $event
-     * @param Property $property
+     * @param  Event  $event
+     * @param  Property  $property
      * @return JsonResponse
+     *
      * @throws Throwable
      */
     public function destroy(Event $event, Property $property): JsonResponse

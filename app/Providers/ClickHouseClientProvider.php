@@ -29,7 +29,7 @@ class ClickHouseClientProvider extends ServiceProvider
                 'host' => config('clickhouse.host'),
                 'port' => config('clickhouse.port'),
                 'username' => config('clickhouse.username'),
-                'password' => config('clickhouse.password')
+                'password' => config('clickhouse.password'),
             ]);
 
             return $client->database(config('clickhouse.database'));

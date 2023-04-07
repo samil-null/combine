@@ -28,7 +28,7 @@ class StoreRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'code' => ['required', 'string'],
-            'type' => [new Enum(DataType::class)]
+            'type' => [new Enum(DataType::class)],
         ];
     }
 }

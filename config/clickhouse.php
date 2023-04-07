@@ -5,5 +5,5 @@ return [
     'port' => env('CLICKHOUSE_PORT', '8123'),
     'username' => env('CLICKHOUSE_USERNAME', '8123'),
     'password' => env('CLICKHOUSE_PASSWORD', 'password'),
-    'database' => env('CLICKHOUSE_DATABASE', 'default')
+    'database' => env('CLICKHOUSE_DATABASE', 'default'),
 ];

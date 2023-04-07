@@ -25,7 +25,7 @@ class PropertyControllerTest extends TestCase
         $response = $this->postJson(route('api.events.properties.store', $event->id), [
             'name' => 'Awesome code',
             'code' => 'awesome_code',
-            'type' => DataType::Integer->value
+            'type' => DataType::Integer->value,
         ]);
 
         $response->assertJsonStructure([
@@ -34,7 +34,7 @@ class PropertyControllerTest extends TestCase
                 'name',
                 'code',
                 'type',
-            ]
+            ],
         ]);
 
         $response->assertCreated();
@@ -47,13 +47,13 @@ class PropertyControllerTest extends TestCase
         $property = $event->properties()->create([
             'name' => 'Awesome code',
             'code' => 'awesome_code',
-            'type' => DataType::String
+            'type' => DataType::String,
         ]);
 
         $response = $this->putJson(route('api.events.properties.update', [$event->id, $property->id]), [
             'name' => 'Some name',
             'code' => 'some_code',
-            'type' => DataType::Float->value
+            'type' => DataType::Float->value,
         ]);
 
         $response->assertOk();
@@ -71,7 +71,7 @@ class PropertyControllerTest extends TestCase
         $property = $event->properties()->create([
             'name' => 'Awesome code',
             'code' => 'awesome_code',
-            'type' => DataType::String
+            'type' => DataType::String,
         ]);
 
         $response = $this->deleteJson(route('api.events.properties.destroy', [$event->id, $property->id]));
@@ -87,13 +87,13 @@ class PropertyControllerTest extends TestCase
             [
                 'name' => 'Awesome code',
                 'code' => 'awesome_code',
-                'type' => DataType::String
+                'type' => DataType::String,
             ],
             [
                 'name' => 'Product ID',
                 'code' => 'product_id',
-                'type' => DataType::Integer
-            ]
+                'type' => DataType::Integer,
+            ],
         ];
 
         $event = Event::factory()->create();
@@ -109,8 +109,8 @@ class PropertyControllerTest extends TestCase
                         'id',
                         'name',
                         'code',
-                    ]
-                ]
+                    ],
+                ],
             ]);
     }
 }
